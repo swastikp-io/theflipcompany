@@ -178,9 +178,12 @@ export default function Pricing() {
             )}
 
             {/* Button */}
-            <button className="mt-2 w-full py-[clamp(1rem,2vw,1rem)] rounded-full font-inter font-bold transition-transform hover:scale-[1.02] bg-white text-black text-[clamp(0.875rem,1.5vw,0.875rem)]">
+            <a 
+              href="#contact"
+              className="mt-2 w-full block text-center py-[clamp(1rem,2vw,1rem)] rounded-full font-inter font-bold transition-transform hover:scale-[1.02] bg-white text-black text-[clamp(0.875rem,1.5vw,0.875rem)]"
+            >
               {plan.buttonText}
-            </button>
+            </a>
 
             {/* Spacer to fill remaining space */}
             {!plan.extras && idx !== 3 && <div className="flex-grow"></div>}
