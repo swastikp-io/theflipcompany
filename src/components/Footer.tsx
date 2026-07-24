@@ -10,10 +10,10 @@ export default function Footer() {
             connect with us:
           </span>
           <div className="flex flex-wrap justify-center items-center gap-[clamp(1rem,4vw,1.5rem)] font-inter font-medium text-[clamp(1rem,2vw,1.125rem)] text-white">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+            <a href="https://www.instagram.com/itsflipco/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
               Instagram <ArrowUpRight className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+            <a href="https://www.linkedin.com/company/theflipcompany/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
               LinkedIn <ArrowUpRight className="w-5 h-5" />
             </a>
           </div>
