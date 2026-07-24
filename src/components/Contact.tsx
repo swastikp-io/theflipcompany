@@ -1,88 +1,137 @@
 import React, { useState } from 'react';
 import { ServiceSelect } from './ServiceSelect';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    service: '',
-    email: '',
-    message: ''
-  });
-
-  const businessNumber = "918081662353"; // Replace with actual number
-  const businessEmail = "work.flipco@gmail.com";
-
-  const serviceNames: Record<string, string> = {
-    communication: "Communication & Customer Engagement",
-    sales: "Sales & Lead Management",
-    content: "Content & Marketing",
-    operations: "Operations & Backend Automation",
-    document: "Document & Compliance",
-    industry: "Industry-Specific Solutions",
-    other: "Other / Not sure"
-  };
-
-  const displayService = serviceNames[formData.service] || 'something else';
-
-  const textMessage = `Hi Shaurya from FLIP,
-I’m ${formData.name}, and I’m interested in your ${displayService} services.
-
-${formData.message}
-
-I’d love to discuss this further. Looking forward to your response.${formData.email ? `\n\n(My email: ${formData.email})` : ''}`;
-
-  const encodedMessage = encodeURIComponent(textMessage);
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(businessEmail)}&su=${encodeURIComponent("New Website Inquiry")}&body=${encodedMessage}`;
+  const [name, setName] = useState('');
+  const [businessName, setBusinessName] = useState('');
+  const [selectedService, setSelectedService] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.name || !formData.service || !formData.message) {
-      alert("Please fill in all required fields (Name, Service, Message).");
+    if (!name.trim()) {
+      alert("Please enter your name.");
       return;
     }
 
-    const whatsappUrl = `https://wa.me/${businessNumber}?text=${encodedMessage}`;
+    const textMessage = `Hi The FLIP Co.
+My name is ${name}.
+I run ${businessName || 'N/A'}.
+I'm interested in ${selectedService}.
+Here's what my business needs:
+${message || 'N/A'}`;
+
+    const whatsappUrl = `https://wa.me/918081662353?text=${encodeURIComponent(textMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <section id="contact" className="px-4 md:px-8 max-w-7xl mx-auto py-[clamp(4rem,10vw,8rem)] border-t border-poch-white/10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(2rem,6vw,4rem)]">
-        <div>
-          <h2 className="font-season-mix text-[clamp(2.5rem,7vw,4.5rem)] leading-[1.1] mb-[clamp(1.5rem,4vw,2rem)]">
-            So, let's make some gooooood stuff together.<br/><span className="italic">Because why not?</span>
-          </h2>
-        </div>
+    <section id="contact" className="px-6 md:px-12 lg:px-16 max-w-7xl mx-auto py-[clamp(5rem,10vw,8rem)] bg-poch-black text-poch-white border-t border-white/10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        {/* Left Column Info */}
+        <div className="lg:col-span-5 flex flex-col justify-between space-y-12 md:space-y-16">
+          <div>
+            <h2 className="font-season-sans text-[clamp(2.75rem,5.5vw,4.75rem)] font-bold leading-[1.1] text-white tracking-tight">
+              Get In Touch<br />With Us
+            </h2>
+          </div>
 
-        <div className="bg-poch-black border border-poch-white/20 p-[clamp(1.5rem,4vw,3rem)] rounded-[2rem] shadow-sm">
-          <p className="font-inter text-[clamp(1rem,2vw,1.125rem)] mb-[clamp(1.5rem,4vw,2rem)]">Fill out the form below and we'll get back to you soon!</p>
-          <form className="space-y-[clamp(1rem,3vw,1.5rem)]" onSubmit={handleSubmit}>
+          <div className="space-y-8 font-inter">
             <div>
-              <input type="text" required placeholder="Name *" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full bg-poch-black border border-poch-white/20 rounded-xl px-6 py-4 font-inter text-base md:text-lg focus:outline-none focus:border-poch-white/50 transition-colors placeholder:text-poch-white/40" />
-            </div>
-            <div>
-              <ServiceSelect value={formData.service} onValueChange={(val) => setFormData({...formData, service: val})} />
-            </div>
-            <div>
-              <input type="email" placeholder="Email (optional)" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-poch-black border border-poch-white/20 rounded-xl px-6 py-4 font-inter text-base md:text-lg focus:outline-none focus:border-poch-white/50 transition-colors placeholder:text-poch-white/40" />
-            </div>
-            <div>
-              <textarea required placeholder="Message *" rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full bg-poch-black border border-poch-white/20 rounded-xl px-6 py-4 font-inter text-base md:text-lg focus:outline-none focus:border-poch-white/50 transition-colors placeholder:text-poch-white/40 resize-none"></textarea>
-            </div>
-            <button type="submit" className="w-full bg-flip-blue text-white px-8 py-4 rounded-xl font-inter font-bold text-base md:text-lg hover:scale-[1.02] transition-transform mt-4 flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg>
-              Submit via WhatsApp
-            </button>
-            
-            <div className="text-center mt-4">
-              <a href={gmailUrl} target="_blank" rel="noopener noreferrer" className="font-inter text-poch-white/50 hover:text-white underline text-sm transition-colors">
-                Don't have WhatsApp? Send us an Email instead.
+              <p className="text-white/60 text-base mb-1 font-normal">Email Us</p>
+              <a 
+                href="mailto:business.theflipco@gmail.com" 
+                className="text-[#023e90] hover:underline font-medium text-lg md:text-xl transition-colors"
+              >
+                business.theflipco@gmail.com
               </a>
             </div>
+
+            <div>
+              <p className="text-white/60 text-base mb-1 font-normal">Let’s grab a coffee</p>
+              <p className="text-[#023e90] font-medium text-lg md:text-xl">
+                We are based in Lucknow
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column Form */}
+        <div className="lg:col-span-7 flex flex-col space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
+            
+            {/* Hi, I'm _____ */}
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-season-sans text-white">
+              <span className="shrink-0 font-bold">Hi, I’m</span>
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                className="bg-transparent border-b-2 border-white focus:outline-none text-white px-2 py-1 min-w-[200px] flex-1 font-inter font-normal text-lg sm:text-xl md:text-2xl lg:text-3xl placeholder:text-white/40 placeholder:font-normal"
+              />
+            </div>
+
+            {/* and I run _____ */}
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-season-sans text-white">
+              <span className="shrink-0 font-bold">and I run</span>
+              <input
+                type="text"
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
+                placeholder="Your Business"
+                className="bg-transparent border-b-2 border-white focus:outline-none text-white px-2 py-1 min-w-[200px] flex-1 font-inter font-normal text-lg sm:text-xl md:text-2xl lg:text-3xl placeholder:text-white/40 placeholder:font-normal"
+              />
+            </div>
+
+            {/* I'm interested in _____ (Shadcn UI Dropdown) */}
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-season-sans text-white">
+              <span className="shrink-0 font-bold">I'm interested in</span>
+              <div className="flex-1 min-w-[220px]">
+                <ServiceSelect
+                  value={selectedService}
+                  onValueChange={setSelectedService}
+                  placeholder="Select"
+                  triggerClassName="w-full bg-transparent border-0 border-b-2 border-white rounded-none px-2 py-1 font-inter font-normal text-lg sm:text-xl md:text-2xl lg:text-3xl text-white focus:ring-0 focus:outline-none hover:border-white/80 transition-colors h-auto shadow-none"
+                />
+              </div>
+            </div>
+
+            {/* [Here's what my business needs] */}
+            <div className="space-y-4 pt-4">
+              <label className="block text-2xl sm:text-3xl md:text-4xl font-season-sans font-bold text-white">
+                [Here's what my business needs]
+              </label>
+              <textarea
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Tell us what you're trying to solve or achieve..."
+                className="w-full bg-[#525252]/50 hover:bg-[#525252]/60 focus:bg-[#525252]/70 border-0 rounded-2xl p-5 font-inter font-normal text-base md:text-lg text-white placeholder:text-white/40 focus:outline-none transition-colors resize-none"
+              />
+            </div>
+
+            {/* Start the Conversation [↗] */}
+            <div className="pt-6">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 font-season-sans text-2xl sm:text-3xl md:text-4xl font-normal text-white hover:text-white/80 transition-colors cursor-pointer group"
+              >
+                <span>Start the Conversation</span>
+                <span className="inline-flex items-center justify-center font-inter font-light text-2xl sm:text-3xl md:text-4xl text-white/90 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                  [<ArrowUpRight className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 inline ml-1" />]
+                </span>
+              </button>
+            </div>
+
           </form>
         </div>
+
       </div>
     </section>
   );
 }
+

@@ -25,13 +25,6 @@ const faqs = [
   }
 ];
 
-const introEmailBody = `Hi FLIP,
-
-I'd love to book a quick intro call to discuss my business, understand your process, and see if we're a good fit to work together.
-
-Looking forward to connecting.`;
-const introMailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=work.flipco@gmail.com&su=${encodeURIComponent("Intro Call")}&body=${encodeURIComponent(introEmailBody)}`;
-
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
@@ -67,14 +60,6 @@ export default function FAQ() {
             </AnimatePresence>
           </div>
         ))}
-      </div>
-      
-      <div className="mt-24 text-center">
-        <h3 className="font-season-sans text-3xl mb-4">Still not sure?</h3>
-        <p className="font-inter text-poch-white/70 mb-8">Book a free intro call — let's get to know each other.</p>
-        <a href={introMailUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-flip-blue text-white px-8 py-4 rounded-full font-inter font-medium text-lg hover:scale-105 transition-transform">
-          Book an Intro Call
-        </a>
       </div>
     </section>
   );

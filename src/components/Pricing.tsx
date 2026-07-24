@@ -25,72 +25,72 @@ const plans: Plan[] = [
   {
     name: "Launch",
     taglineIcon: <Flame className="w-5 h-5 text-black/40" strokeWidth={1.5} />,
-    tagline: "Perfect for your first AI workflow.",
+    tagline: "Perfect for single AI solutions & kickstarting your presence.",
     price: "₹15,000+",
     features: [
       { text: "Discovery & Strategy Call" },
-      { text: "One AI Automation" },
-      { text: "WhatsApp Business Agent OR Website Chatbot" },
-      { text: "Deployment & Setup" }
+      { text: "AI Chatbot OR Basic Automation" },
+      { text: "AI SEO / GEO Audit & Setup" },
+      { text: "Deployment & Team Setup" }
     ],
     cardColor: "bg-white",
     textColor: "text-black",
-    dotColor: "bg-[#0000FF]",
+    dotColor: "bg-[#023e90]",
     buttonText: "Start Now"
   },
   {
     name: "Grow",
     taglineIcon: <Sparkles className="w-5 h-5 text-black/40" strokeWidth={1.5} />,
-    tagline: "Automate the work you do every day.",
+    tagline: "Automate customer calls, search, & web presence.",
     price: "₹45,000+",
     features: [
       { text: "Everything in Launch" },
-      { text: "Up to 3 AI Workflows" },
-      { text: "CRM & Lead Automation" },
-      { text: "Social Content Automation" },
-      { text: "30 Days Support" }
+      { text: "Voice AI Agent OR Advanced Chatbot" },
+      { text: "Full AI SEO / GEO Optimization" },
+      { text: "AI-Assisted Web Development" },
+      { text: "30 Days Dedicated Support" }
     ],
-    extras: ["Voice AI", "Local SEO Bots", "Review & Reputation Management"],
+    extras: ["Voice AI Agents", "Workflow Automation Stack", "AI Content Strategy"],
     cardColor: "bg-white",
     textColor: "text-black",
-    dotColor: "bg-[#0000FF]",
+    dotColor: "bg-[#023e90]",
     buttonText: "Grow Faster"
   },
   {
     name: "Scale",
     taglineIcon: <Smile className="w-5 h-5 text-black/40" strokeWidth={1.5} />,
-    tagline: "Build an AI-powered business.",
+    tagline: "Complete AI transformation for growing businesses.",
     price: "₹1,20,000+",
     features: [
       { text: "Everything in Grow" },
-      { text: "Operations Automation" },
-      { text: "Invoice & Document Processing" },
-      { text: "HR & Resume Automation" },
-      { text: "AI Knowledge Base" }
+      { text: "Full Multi-Tool Workflow Automation" },
+      { text: "AI-Assisted Web & App Development" },
+      { text: "AI Strategy & Generative Content" },
+      { text: "Continuous GEO Brand Monitoring" }
     ],
-    extras: ["Inventory Automation", "Logistics & Dispatch Optimization", "Custom Dashboards", "Team Training"],
+    extras: ["Custom LLM Integration", "Voice AI Campaign Suite", "Analytics & Dashboards", "Team Training"],
     cardColor: "bg-white",
     textColor: "text-black",
-    dotColor: "bg-[#0000FF]",
+    dotColor: "bg-[#023e90]",
     buttonText: "Scale with AI"
   },
   {
     name: "Enterprise",
     badge: "MOST POPULAR",
     taglineIcon: <Dices className="w-5 h-5 text-white/60" strokeWidth={1.5} />,
-    tagline: "Custom AI systems for ambitious businesses.",
+    tagline: "Custom AI systems & end-to-end transformation.",
     price: "Custom",
     features: [
-      { text: "Custom AI Strategy" },
-      { text: "Industry-Specific AI Solutions" },
-      { text: "Multi-Team Automation" },
-      { text: "AI Voice Agents" },
-      { text: "Internal AI Assistants" },
-      { text: "API Integrations" },
-      { text: "Dedicated Support" },
-      { text: "Ongoing Optimization" }
+      { text: "Custom AI Strategy & Consulting" },
+      { text: "AI SEO & GEO Dominance Strategy" },
+      { text: "Voice AI Agents & AI Chatbots" },
+      { text: "AI-Assisted Web & App Development" },
+      { text: "Enterprise Workflow Automation" },
+      { text: "API & CRM Integrations" },
+      { text: "Dedicated Lead & 24/7 Support" },
+      { text: "Ongoing Optimization & Roadmap" }
     ],
-    cardColor: "bg-[#0000FF]",
+    cardColor: "bg-[#023e90]",
     textColor: "text-white",
     dotColor: "bg-white",
     buttonText: "Book a Call"

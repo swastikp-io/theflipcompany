@@ -7,33 +7,40 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function ServiceSelect({ value, onValueChange }: { value?: string, onValueChange?: (value: string) => void }) {
+export function ServiceSelect({ 
+  value, 
+  onValueChange, 
+  triggerClassName,
+  placeholder = "Select"
+}: { 
+  value?: string, 
+  onValueChange?: (value: string) => void,
+  triggerClassName?: string,
+  placeholder?: string
+}) {
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="w-full bg-poch-black border-poch-white/20 rounded-xl px-6 py-[1.75rem] font-inter text-lg hover:border-poch-white/40 focus:ring-1 focus:ring-poch-white/50 transition-colors text-poch-white/70">
-        <SelectValue placeholder="Select Service..." />
+      <SelectTrigger className={triggerClassName || "w-full bg-poch-black border-poch-white/20 rounded-xl px-6 py-[1.75rem] font-inter text-lg hover:border-poch-white/40 focus:ring-1 focus:ring-poch-white/50 transition-colors text-poch-white/70"}>
+        <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent className="bg-poch-black text-white border-poch-white/20 rounded-xl shadow-xl overflow-hidden font-inter text-lg">
-        <SelectItem value="communication" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Communication & Customer Engagement
+      <SelectContent className="bg-[#0f0f0f] text-white border border-white/20 rounded-xl shadow-2xl overflow-hidden font-inter text-base md:text-lg">
+        <SelectItem value="AI SEO (GEO)" className="cursor-pointer py-3 focus:bg-[#023e90] focus:text-white data-[state=checked]:bg-[#023e90] data-[state=checked]:text-white">
+          AI SEO (GEO)
         </SelectItem>
-        <SelectItem value="sales" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Sales & Lead Management
+        <SelectItem value="AI Agents" className="cursor-pointer py-3 focus:bg-[#023e90] focus:text-white data-[state=checked]:bg-[#023e90] data-[state=checked]:text-white">
+          AI Agents
         </SelectItem>
-        <SelectItem value="content" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Content & Marketing
+        <SelectItem value="Website Development" className="cursor-pointer py-3 focus:bg-[#023e90] focus:text-white data-[state=checked]:bg-[#023e90] data-[state=checked]:text-white">
+          Website Development
         </SelectItem>
-        <SelectItem value="operations" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Operations & Backend Automation
+        <SelectItem value="AI Automation" className="cursor-pointer py-3 focus:bg-[#023e90] focus:text-white data-[state=checked]:bg-[#023e90] data-[state=checked]:text-white">
+          AI Automation
         </SelectItem>
-        <SelectItem value="document" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Document & Compliance
+        <SelectItem value="AI Consulting" className="cursor-pointer py-3 focus:bg-[#023e90] focus:text-white data-[state=checked]:bg-[#023e90] data-[state=checked]:text-white">
+          AI Consulting
         </SelectItem>
-        <SelectItem value="industry" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Industry-Specific Solutions
-        </SelectItem>
-        <SelectItem value="other" className="cursor-pointer py-2.5 focus:bg-blue-600 focus:text-white data-[state=checked]:bg-blue-600 data-[state=checked]:text-white">
-          Other / Not sure
+        <SelectItem value="Something else" className="cursor-pointer py-3 focus:bg-[#023e90] focus:text-white data-[state=checked]:bg-[#023e90] data-[state=checked]:text-white">
+          Something else
         </SelectItem>
       </SelectContent>
     </Select>

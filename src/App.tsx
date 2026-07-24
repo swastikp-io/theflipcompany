@@ -7,6 +7,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import BrandVideo from './components/BrandVideo';
 import Work from './components/Work';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
@@ -19,6 +20,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Services />
+      <BrandVideo />
       <Work />
       <Pricing />
       <FAQ />

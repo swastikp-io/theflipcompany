@@ -3,24 +3,40 @@ import { motion } from 'motion/react';
 
 export default function Hero() {
   return (
-    <section className="min-[100svh] bg-poch-black text-white relative overflow-hidden flex flex-col items-center justify-start pt-[15svh] md:pt-[18vh] pb-[clamp(12rem,25vh,18rem)]">
-      <img src={import.meta.env.BASE_URL + "bg-image.png"} alt="Hero Background" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" />
-      <div className="z-20 text-center max-w-5xl mx-auto px-4 w-full">
-        <motion.h1 
+    <section className="min-h-[90vh] md:min-h-screen bg-[#023e90] text-white relative overflow-hidden flex flex-col items-center justify-center px-4 py-20 md:py-32">
+      {/* Background Image & Overlay */}
+      <img 
+        src="https://i.pinimg.com/1200x/aa/21/2f/aa212ff9afc4b8560fcad015e926d1d5.jpg" 
+        alt="Hero Background" 
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" 
+      />
+      <div className="absolute inset-0 bg-[#023e90]/40 mix-blend-multiply z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
+
+      {/* Content */}
+      <div className="z-20 text-center max-w-4xl mx-auto w-full flex flex-col items-center justify-center space-y-6 md:space-y-8">
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-[clamp(2.5rem,7vw,5.5rem)] leading-[1.1] tracking-tight"
+          className="font-season-sans text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[1.1] tracking-tight text-white drop-shadow-lg"
         >
-          <span className="font-season-sans font-semibold">We are FLIP, building AI</span><br/>
-          <span className="font-season-mix font-normal text-white/95">
-            for businesses that hate
-          </span><br/>
-          <span className="font-season-mix font-normal text-white/95">busywork.</span>
+          Visibility for the AI Age.
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="font-inter text-[clamp(1.125rem,2.5vw,1.45rem)] text-white/90 font-normal leading-relaxed max-w-3xl mx-auto drop-shadow"
+        >
+          Optimize your brand for ChatGPT, Perplexity, Gemini, Claude, and Google's AI Overviews so you're recommended when customers ask questions—not just when they search.
+        </motion.p>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-[clamp(8rem,15vw,16rem)] bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-[clamp(12rem,25vw,20rem)] bg-gradient-to-t from-black to-transparent pointer-events-none z-10 backdrop-blur-[2px] [mask-image:linear-gradient(to_top,black,transparent)]" />
+
+      {/* Smooth gradient transition to the following section */}
+      <div className="absolute bottom-0 left-0 right-0 h-28 md:h-40 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-20" />
     </section>
   );
 }
+
