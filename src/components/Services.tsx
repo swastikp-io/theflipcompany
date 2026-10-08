@@ -1,106 +1,115 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-interface ServiceItemData {
-  title: string;
-  description: string;
-}
-
-const leftServices: ServiceItemData[] = [
+const services = [
   {
-    title: "AI Chatbot",
-    description: "Deploy Intelligent chat bots that answer questions, qualify leads and deliver seamless customer support around the clock"
+    num: '01',
+    title: 'Websites',
+    subtitle: 'Websites that make your business look as good as it actually is.',
+    desc: 'High-performance marketing websites, company websites, portfolios, landing pages and custom experiences designed around your brand and customers.',
   },
   {
-    title: "Workflow Automation",
-    description: "Connect your stack and automate the busywork between every tool you run."
+    num: '02',
+    title: 'E-commerce',
+    subtitle: 'Turn your website into a sales channel.',
+    desc: 'We build modern online stores that make it easy for customers to discover products, trust your brand, and buy.',
   },
   {
-    title: "AI SEO / GEO",
-    description: "Optimize your digital presence for generative search engines, ChatGPT, and Perplexity so your brand gets cited and recommended first."
-  }
-];
-
-const rightServices: ServiceItemData[] = [
-  {
-    title: "Voice AI Agents",
-    description: "Automate inbound and outbound calls with natural voice AI agents that book appointments and handle customer enquiries"
+    num: '03',
+    title: 'Web Apps',
+    subtitle: 'From websites to full-blown products.',
+    desc: 'Custom web applications, dashboards, portals, booking systems and internal tools built around the way your business works.',
   },
   {
-    title: "AI Strategy and Consulting",
-    description: "Generative image, video, and audio production at the speed of your roadmap."
+    num: '04',
+    title: 'Conversion & Growth',
+    subtitle: "More visitors are useless if they don't convert.",
+    desc: 'We structure your website around clear messaging, strong calls-to-action, frictionless journeys and conversion-focused UX.',
   },
   {
-    title: "AI Assisted Web Development",
-    description: "Build high-performance, modern websites and applications powered by intelligent AI workflows and modern web stacks."
-  }
+    num: '05',
+    title: 'AI Integrations',
+    subtitle: 'Add AI where it actually helps.',
+    desc: 'AI chatbots, lead qualification, recommendation systems, content workflows, intelligent search and custom AI features integrated directly into your website.',
+  },
+  {
+    num: '06',
+    title: 'Website Care',
+    subtitle: "Launch isn't the finish line.",
+    desc: 'Hosting, maintenance, updates, analytics, SEO improvements, performance optimization and ongoing development to keep your website working.',
+  },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="px-6 md:px-12 lg:px-16 max-w-6xl mx-auto py-[clamp(4rem,8vw,7rem)] bg-poch-black text-poch-white">
-      {/* Header Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col items-center text-center mb-16 md:mb-24 space-y-4"
-      >
-        <h2 className="font-season-sans text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold tracking-tight leading-[1.2] text-white max-w-4xl">
-          Everything you need to ship AI under one roof
-        </h2>
-        <div className="font-inter text-[clamp(1rem,2vw,1.15rem)] text-white/70 font-normal leading-relaxed max-w-2xl space-y-1">
-          <p>Scale your business with tailored intelligence.</p>
-          <p>Choose the exact solutions you need today or automate whole business operation.</p>
+    <section id="services" className="w-full bg-poch-black text-poch-white py-24 md:py-32 px-6 sm:px-10 md:px-12 lg:px-16 overflow-hidden">
+      <div className="max-w-[1700px] mx-auto">
+        
+        {/* Header Section */}
+        <div className="max-w-4xl mb-24 md:mb-32">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] leading-[1.05] font-inter font-medium tracking-tight mb-8"
+          >
+            Everything you need to build your presence online.
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            className="text-lg md:text-2xl text-white/60 max-w-3xl leading-relaxed font-inter font-normal"
+          >
+            From your first landing page to a complete digital platform, we design and develop websites that are fast, useful, and built around your business goals.
+          </motion.p>
         </div>
-      </motion.div>
 
-      {/* Services Grid (2 Columns) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-12 md:gap-y-16 max-w-5xl mx-auto">
-        {/* Left Column */}
-        <div className="flex flex-col space-y-12 md:space-y-16">
-          {leftServices.map((service, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
+        {/* Divider / Label Row */}
+        <div className="w-full flex justify-between items-end pb-6 border-b border-white/10 mb-16">
+          <div className="flex items-center gap-6 md:gap-12 font-inter text-sm md:text-base font-medium">
+            <span>&#9679; FL/01</span>
+            <span>Our services</span>
+          </div>
+          <div className="font-inter text-sm md:text-base font-medium border-b border-white pb-0.5">
+            How we can help you
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:gap-y-24">
+          {services.map((service, index) => (
+            <motion.div 
+              key={service.num}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-              className="flex flex-col text-left items-start"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              className="flex flex-col"
             >
-              <h3 className="font-season-sans text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">
+              {/* Number */}
+              <div className="text-sm font-medium font-inter mb-4">
+                {service.num}
+              </div>
+              
+              {/* Separator */}
+              <div className="w-full h-px bg-white/10 mb-6 md:mb-8" />
+              
+              {/* Title & Description */}
+              <h3 className="font-inter font-semibold text-lg md:text-xl mb-4 text-white">
                 {service.title}
               </h3>
-              <p className="font-inter text-sm md:text-base text-white/70 font-normal leading-relaxed max-w-md">
-                {service.description}
-              </p>
+              <div className="font-inter text-[0.95rem] leading-relaxed text-white/60">
+                <p className="mb-2 text-white/80">{service.subtitle}</p>
+                <p>{service.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Right Column */}
-        <div className="flex flex-col space-y-12 md:space-y-16">
-          {rightServices.map((service, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
-              className="flex flex-col text-left md:text-right items-start md:items-end"
-            >
-              <h3 className="font-season-sans text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">
-                {service.title}
-              </h3>
-              <p className="font-inter text-sm md:text-base text-white/70 font-normal leading-relaxed max-w-md">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
-

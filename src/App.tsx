@@ -7,11 +7,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import BrandVideo from './components/BrandVideo';
-import Work from './components/Work';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
+
 import Footer from './components/Footer';
 
 export default function App() {
@@ -20,11 +16,18 @@ export default function App() {
       <Navbar />
       <Hero />
       <Services />
-      <BrandVideo />
-      <Work />
-      <Pricing />
-      <FAQ />
-      <Contact />
+      <div className="w-full relative flex items-center justify-center overflow-hidden">
+        <img 
+          src="/Prismatic Alpine Lake Reflection.png" 
+          alt="Prismatic Alpine Lake Reflection" 
+          className="w-full min-h-[40vh] md:min-h-[60vh] object-cover block"
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+          <h2 className="text-white font-inter font-medium tracking-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center max-w-4xl px-6 drop-shadow-xl">
+            Stop treating your website like a brochure.
+          </h2>
+        </div>
+      </div>
       <Footer />
     </div>
   );
