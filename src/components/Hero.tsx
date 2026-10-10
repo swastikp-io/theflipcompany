@@ -60,7 +60,7 @@ export default function Hero() {
           >
             <h1 className="font-inter text-[clamp(0.95rem,1.25vw,1.1rem)] text-white/90 font-normal leading-relaxed drop-shadow">
               <strong>Your website should do more than look good.</strong><br />
-              We are a digital studio building high-performance websites, e-commerce stores, web apps, and AI integrations that help businesses operate, sell, and grow.
+              We design and build fast, modern websites that turn visitors into customers.
             </h1>
 
             <div className="pt-1">
