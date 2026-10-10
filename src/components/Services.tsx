@@ -76,8 +76,7 @@ export default function Services() {
 
         {/* Divider / Label Row */}
         <div className="w-full flex justify-between items-end pb-6 border-b border-white/10 mb-16">
-          <div className="flex items-center gap-6 md:gap-12 font-inter text-sm md:text-base font-medium">
-            <span>&#9679; FL/01</span>
+          <div className="font-inter text-sm md:text-base font-medium">
             <span>Our services</span>
           </div>
           <div className="font-inter text-sm md:text-base font-medium border-b border-white pb-0.5">

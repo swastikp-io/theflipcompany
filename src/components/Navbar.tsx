@@ -69,17 +69,6 @@ export default function Navbar() {
 
         {/* Top Right Desktop & Mobile CTA / Menu Toggle */}
         <div className="pointer-events-auto flex items-center gap-4">
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=business.theflipco@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group font-inter text-sm md:text-base font-medium tracking-wide text-white/90 hover:text-white transition-all duration-300 inline-flex items-center gap-1.5"
-          >
-            <span className="text-white/40 group-hover:text-white transition-colors duration-300 text-base md:text-lg">[</span>
-            <span className="group-hover:tracking-wider transition-all duration-300">start a project</span>
-            <span className="text-white/40 group-hover:text-white transition-colors duration-300 text-base md:text-lg">]</span>
-          </a>
-
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
