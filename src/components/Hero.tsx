@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image */}
       <img
         src="/Enchanted Forest Lake Reflection.png"
-        alt="Enchanted Forest Lake Reflection"
+        alt=""
         className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
       />
 
@@ -46,9 +46,9 @@ export default function Hero() {
             transition={{ duration: 0.85, ease: "easeOut" }}
             className="shrink-0"
           >
-            <h1 className="font-season-sans font-bold text-[clamp(4.25rem,11.5vw,11.5rem)] leading-[0.88] tracking-[-0.035em] text-white select-none drop-shadow-2xl">
+            <div className="font-season-sans font-bold text-[clamp(4.25rem,11.5vw,11.5rem)] leading-[0.88] tracking-[-0.035em] text-white select-none drop-shadow-2xl">
               The FLIP Co
-            </h1>
+            </div>
           </motion.div>
 
           {/* Bottom Right: Description + CTA */}
@@ -58,10 +58,10 @@ export default function Hero() {
             transition={{ duration: 0.85, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col items-start space-y-4 md:space-y-5 max-w-md lg:mb-2"
           >
-            <p className="font-inter text-[clamp(0.95rem,1.25vw,1.1rem)] text-white/90 font-normal leading-relaxed drop-shadow">
+            <h1 className="font-inter text-[clamp(0.95rem,1.25vw,1.1rem)] text-white/90 font-normal leading-relaxed drop-shadow">
               <strong>Your website should do more than look good.</strong><br />
-              We design and build fast, modern websites that turn visitors into customers.
-            </p>
+              We are a digital studio building high-performance websites, e-commerce stores, web apps, and AI integrations that help businesses operate, sell, and grow.
+            </h1>
 
             <div className="pt-1">
               <a

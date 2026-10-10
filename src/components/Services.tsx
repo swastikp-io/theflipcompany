@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -7,36 +8,42 @@ const services = [
     title: 'Websites',
     subtitle: 'Websites that make your business look as good as it actually is.',
     desc: 'High-performance marketing websites, company websites, portfolios, landing pages and custom experiences designed around your brand and customers.',
+    link: '/services/websites',
   },
   {
     num: '02',
     title: 'E-commerce',
     subtitle: 'Turn your website into a sales channel.',
     desc: 'We build modern online stores that make it easy for customers to discover products, trust your brand, and buy.',
+    link: '/services/ecommerce',
   },
   {
     num: '03',
     title: 'Web Apps',
     subtitle: 'From websites to full-blown products.',
     desc: 'Custom web applications, dashboards, portals, booking systems and internal tools built around the way your business works.',
+    link: '/services/web-apps',
   },
   {
     num: '04',
     title: 'Conversion & Growth',
     subtitle: "More visitors are useless if they don't convert.",
     desc: 'We structure your website around clear messaging, strong calls-to-action, frictionless journeys and conversion-focused UX.',
+    link: '/services/conversion-growth',
   },
   {
     num: '05',
     title: 'AI Integrations',
     subtitle: 'Add AI where it actually helps.',
     desc: 'AI chatbots, lead qualification, recommendation systems, content workflows, intelligent search and custom AI features integrated directly into your website.',
+    link: '/services/ai-integrations',
   },
   {
     num: '06',
     title: 'Website Care',
     subtitle: "Launch isn't the finish line.",
     desc: 'Hosting, maintenance, updates, analytics, SEO improvements, performance optimization and ongoing development to keep your website working.',
+    link: '/services/website-care',
   },
 ];
 
@@ -87,24 +94,26 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="flex flex-col"
+              className="flex flex-col h-full group"
             >
-              {/* Number */}
-              <div className="text-sm font-medium font-inter mb-4">
-                {service.num}
-              </div>
-              
-              {/* Separator */}
-              <div className="w-full h-px bg-white/10 mb-6 md:mb-8" />
-              
-              {/* Title & Description */}
-              <h3 className="font-inter font-semibold text-lg md:text-xl mb-4 text-white">
-                {service.title}
-              </h3>
-              <div className="font-inter text-[0.95rem] leading-relaxed text-white/60">
-                <p className="mb-2 text-white/80">{service.subtitle}</p>
-                <p>{service.desc}</p>
-              </div>
+              <Link to={service.link} className="flex flex-col h-full">
+                {/* Number */}
+                <div className="text-sm font-medium font-inter mb-4 text-white/60 group-hover:text-white transition-colors duration-300">
+                  {service.num}
+                </div>
+                
+                {/* Separator */}
+                <div className="w-full h-px bg-white/10 mb-6 md:mb-8 group-hover:bg-white/40 transition-colors duration-300" />
+                
+                {/* Title & Description */}
+                <h3 className="font-inter font-semibold text-lg md:text-xl mb-4 text-white group-hover:tracking-wide transition-all duration-300">
+                  {service.title} &rarr;
+                </h3>
+                <div className="font-inter text-[0.95rem] leading-relaxed text-white/60 group-hover:text-white/80 transition-colors duration-300">
+                  <p className="mb-2 text-white/80">{service.subtitle}</p>
+                  <p>{service.desc}</p>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
